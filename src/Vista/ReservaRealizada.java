@@ -1,21 +1,20 @@
 package Vista;
 
+import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import java.awt.Component;
-import java.awt.Font;
-import javax.swing.JButton;
 import java.awt.GridBagLayout;
+import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
+import javax.swing.JButton;
 import java.awt.Insets;
+import javax.swing.SwingConstants;
 
-public class CancelarReserva {
+public class ReservaRealizada {
 
-	JFrame frame;
+	private JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -24,7 +23,7 @@ public class CancelarReserva {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CancelarReserva window = new CancelarReserva();
+					ReservaRealizada window = new ReservaRealizada();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +35,7 @@ public class CancelarReserva {
 	/**
 	 * Create the application.
 	 */
-	public CancelarReserva() {
+	public ReservaRealizada() {
 		initialize();
 	}
 
@@ -48,18 +47,19 @@ public class CancelarReserva {
 		frame.setBounds(100, 100, 450, 150);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{103, 227, 0};
-		gridBagLayout.rowHeights = new int[]{0, 21, 0, 0, 23, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{64, 305, 37, 0};
+		gridBagLayout.rowHeights = new int[]{28, 21, 0, 0, 23, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblNewLabel = new JLabel("Su reserva ha sido cancelada");
+		JLabel lblNewLabel = new JLabel("Su reserva ha sido realizada con éxito");
 		lblNewLabel.setFont(new Font("Rockwell", Font.PLAIN, 17));
 		lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 0);
+		gbc_lblNewLabel.anchor = GridBagConstraints.WEST;
+		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.gridx = 1;
 		gbc_lblNewLabel.gridy = 1;
 		frame.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
@@ -67,7 +67,7 @@ public class CancelarReserva {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setAlignmentX(Component.CENTER_ALIGNMENT);
 		GridBagConstraints gbc_btnAceptar = new GridBagConstraints();
-		gbc_btnAceptar.insets = new Insets(0, 0, 5, 0);
+		gbc_btnAceptar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnAceptar.gridx = 1;
 		gbc_btnAceptar.gridy = 3;
 		frame.getContentPane().add(btnAceptar, gbc_btnAceptar);
