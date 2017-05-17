@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import java.awt.Insets;
 import javax.swing.SwingConstants;
 
-public class ReservaRealizada {
+public class PopUpReservaRealizada {
 
 	private JFrame frame;
 
@@ -23,7 +23,7 @@ public class ReservaRealizada {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ReservaRealizada window = new ReservaRealizada();
+					PopUpReservaRealizada window = new PopUpReservaRealizada();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +35,7 @@ public class ReservaRealizada {
 	/**
 	 * Create the application.
 	 */
-	public ReservaRealizada() {
+	public PopUpReservaRealizada() {
 		initialize();
 	}
 

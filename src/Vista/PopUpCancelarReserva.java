@@ -13,7 +13,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
-public class CancelarReserva {
+public class PopUpCancelarReserva {
 
 	JFrame frame;
 
@@ -24,7 +24,7 @@ public class CancelarReserva {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CancelarReserva window = new CancelarReserva();
+					PopUpCancelarReserva window = new PopUpCancelarReserva();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class CancelarReserva {
 	/**
 	 * Create the application.
 	 */
-	public CancelarReserva() {
+	public PopUpCancelarReserva() {
 		initialize();
 	}
 
