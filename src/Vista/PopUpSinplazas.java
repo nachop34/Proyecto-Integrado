@@ -54,7 +54,7 @@ public class PopUpSinplazas {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		JLabel lblEsteVueloYa = new JLabel("Este vuelo ya no dispone de plazas");
-		lblEsteVueloYa.setFont(new Font("Tahoma", Font.PLAIN, 21));
+		lblEsteVueloYa.setFont(new Font("Rockwell", Font.BOLD, 20));
 		GridBagConstraints gbc_lblEsteVueloYa = new GridBagConstraints();
 		gbc_lblEsteVueloYa.insets = new Insets(0, 0, 5, 5);
 		gbc_lblEsteVueloYa.gridx = 2;
