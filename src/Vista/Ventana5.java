@@ -81,15 +81,6 @@ public class Ventana5 {
 		gbc_lblNewLabel.gridy = 1;
 		frmSeleccionDePlaza.getContentPane().add(titol, gbc_lblNewLabel);
 		
-		JLabel label = new JLabel("");
-		label.setBackground(Color.LIGHT_GRAY);
-		GridBagConstraints gbc_label = new GridBagConstraints();
-		gbc_label.gridwidth = 15;
-		gbc_label.insets = new Insets(0, 0, 5, 5);
-		gbc_label.gridx = 1;
-		gbc_label.gridy = 2;
-		frmSeleccionDePlaza.getContentPane().add(label, gbc_label);
-		
 		JLabel lblV = new JLabel("V");
 		lblV.setFont(new Font("Tahoma", Font.BOLD, 36));
 		GridBagConstraints gbc_lblV = new GridBagConstraints();
