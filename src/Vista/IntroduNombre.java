@@ -59,7 +59,7 @@ public class IntroduNombre {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblNewLabel = new JLabel("Introduce tu nombre y apellidos:");
+		JLabel lblNewLabel = new JLabel("Introduce tu nombre completo:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 22));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -82,14 +82,14 @@ public class IntroduNombre {
 		gbc_textField_1.gridy = 6;
 		frame.getContentPane().add(textField_1, gbc_textField_1);
 		
-		btnNewButton = new JButton("New button");
+		btnNewButton = new JButton("Aceptar");
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton.gridx = 4;
 		gbc_btnNewButton.gridy = 9;
 		frame.getContentPane().add(btnNewButton, gbc_btnNewButton);
 		
-		btnNewButton_1 = new JButton("New button");
+		btnNewButton_1 = new JButton("Atr\u00E1s");
 		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
 		gbc_btnNewButton_1.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton_1.gridx = 1;

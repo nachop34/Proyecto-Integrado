@@ -19,6 +19,8 @@ import javax.swing.Box;
 import java.awt.Toolkit;
 import javax.swing.JPanel;
 import java.awt.SystemColor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Ventana5 {
 
@@ -58,8 +60,8 @@ public class Ventana5 {
 		
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] {40, 33, 0, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30};
-		gridBagLayout.rowHeights = new int[] {0, 30, 30, 30, 30, 30, 30, 0, 0, 0, 30};
+		gridBagLayout.columnWidths = new int[] {40, 33, 34, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30};
+		gridBagLayout.rowHeights = new int[] {0, 30, 30, 90, 86, 46, 81, 83, 0, 0, 30};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE,Double.MIN_VALUE,
 				Double.MIN_VALUE,Double.MIN_VALUE,Double.MIN_VALUE,Double.MIN_VALUE,Double.MIN_VALUE,
 				Double.MIN_VALUE,Double.MIN_VALUE,Double.MIN_VALUE,Double.MIN_VALUE,Double.MIN_VALUE,
@@ -79,13 +81,22 @@ public class Ventana5 {
 		gbc_lblNewLabel.gridy = 1;
 		frmSeleccionDePlaza.getContentPane().add(titol, gbc_lblNewLabel);
 		
-		JButton btnV = new JButton("V");
-		btnV.setFont(new Font("Tahoma", Font.BOLD, 18));
-		GridBagConstraints gbc_btnV = new GridBagConstraints();
-		gbc_btnV.insets = new Insets(0, 0, 5, 5);
-		gbc_btnV.gridx = 2;
-		gbc_btnV.gridy = 3;
-		frmSeleccionDePlaza.getContentPane().add(btnV, gbc_btnV);
+		JLabel label = new JLabel("");
+		label.setBackground(Color.LIGHT_GRAY);
+		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.gridwidth = 15;
+		gbc_label.insets = new Insets(0, 0, 5, 5);
+		gbc_label.gridx = 1;
+		gbc_label.gridy = 2;
+		frmSeleccionDePlaza.getContentPane().add(label, gbc_label);
+		
+		JLabel lblV = new JLabel("V");
+		lblV.setFont(new Font("Tahoma", Font.BOLD, 36));
+		GridBagConstraints gbc_lblV = new GridBagConstraints();
+		gbc_lblV.insets = new Insets(0, 0, 5, 5);
+		gbc_lblV.gridx = 2;
+		gbc_lblV.gridy = 3;
+		frmSeleccionDePlaza.getContentPane().add(lblV, gbc_lblV);
 		
 		JButton btnNewButton = new JButton("3");
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
@@ -178,13 +189,13 @@ public class Ventana5 {
 		gbc_button_11.gridy = 3;
 		frmSeleccionDePlaza.getContentPane().add(button_11, gbc_button_11);
 		
-		JButton btnP = new JButton("P");
-		btnP.setFont(new Font("Tahoma", Font.BOLD, 18));
-		GridBagConstraints gbc_btnP = new GridBagConstraints();
-		gbc_btnP.insets = new Insets(0, 0, 5, 5);
-		gbc_btnP.gridx = 2;
-		gbc_btnP.gridy = 4;
-		frmSeleccionDePlaza.getContentPane().add(btnP, gbc_btnP);
+		JLabel lblP = new JLabel("P");
+		lblP.setFont(new Font("Tahoma", Font.BOLD, 36));
+		GridBagConstraints gbc_lblP = new GridBagConstraints();
+		gbc_lblP.insets = new Insets(0, 0, 5, 5);
+		gbc_lblP.gridx = 2;
+		gbc_lblP.gridy = 4;
+		frmSeleccionDePlaza.getContentPane().add(lblP, gbc_lblP);
 		
 		JButton button_12 = new JButton("4");
 		GridBagConstraints gbc_button_12 = new GridBagConstraints();
@@ -277,13 +288,13 @@ public class Ventana5 {
 		gbc_button_24.gridy = 4;
 		frmSeleccionDePlaza.getContentPane().add(button_24, gbc_button_24);
 		
-		JButton button_53 = new JButton("P");
-		button_53.setFont(new Font("Tahoma", Font.BOLD, 18));
-		GridBagConstraints gbc_button_53 = new GridBagConstraints();
-		gbc_button_53.insets = new Insets(0, 0, 5, 5);
-		gbc_button_53.gridx = 2;
-		gbc_button_53.gridy = 6;
-		frmSeleccionDePlaza.getContentPane().add(button_53, gbc_button_53);
+		JLabel lblV_1 = new JLabel("P");
+		lblV_1.setFont(new Font("Tahoma", Font.BOLD, 36));
+		GridBagConstraints gbc_lblV_1 = new GridBagConstraints();
+		gbc_lblV_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblV_1.gridx = 2;
+		gbc_lblV_1.gridy = 6;
+		frmSeleccionDePlaza.getContentPane().add(lblV_1, gbc_lblV_1);
 		
 		JButton button_25 = new JButton("2");
 		GridBagConstraints gbc_button_25 = new GridBagConstraints();
@@ -376,13 +387,13 @@ public class Ventana5 {
 		gbc_button_37.gridy = 6;
 		frmSeleccionDePlaza.getContentPane().add(button_37, gbc_button_37);
 		
-		JButton button_52 = new JButton("V");
-		button_52.setFont(new Font("Tahoma", Font.BOLD, 18));
-		GridBagConstraints gbc_button_52 = new GridBagConstraints();
-		gbc_button_52.insets = new Insets(0, 0, 5, 5);
-		gbc_button_52.gridx = 2;
-		gbc_button_52.gridy = 7;
-		frmSeleccionDePlaza.getContentPane().add(button_52, gbc_button_52);
+		JLabel lblV_2 = new JLabel("V");
+		lblV_2.setFont(new Font("Tahoma", Font.BOLD, 36));
+		GridBagConstraints gbc_lblV_2 = new GridBagConstraints();
+		gbc_lblV_2.insets = new Insets(0, 0, 5, 5);
+		gbc_lblV_2.gridx = 2;
+		gbc_lblV_2.gridy = 7;
+		frmSeleccionDePlaza.getContentPane().add(lblV_2, gbc_lblV_2);
 		
 		JButton button_38 = new JButton("1");
 		GridBagConstraints gbc_button_38 = new GridBagConstraints();
@@ -475,11 +486,18 @@ public class Ventana5 {
 		gbc_button_50.gridy = 7;
 		frmSeleccionDePlaza.getContentPane().add(button_50, gbc_button_50);
 		
+		JButton btnAtrs = new JButton("Atr\u00E1s");
+		GridBagConstraints gbc_btnAtrs = new GridBagConstraints();
+		gbc_btnAtrs.insets = new Insets(0, 0, 0, 5);
+		gbc_btnAtrs.gridx = 0;
+		gbc_btnAtrs.gridy = 9;
+		frmSeleccionDePlaza.getContentPane().add(btnAtrs, gbc_btnAtrs);
+		
 		JButton button_51 = new JButton("Aceptar");
 		GridBagConstraints gbc_button_51 = new GridBagConstraints();
 		gbc_button_51.insets = new Insets(0, 0, 0, 5);
-		gbc_button_51.gridx = 3;
-		gbc_button_51.gridy = 10;
+		gbc_button_51.gridx = 9;
+		gbc_button_51.gridy = 9;
 		frmSeleccionDePlaza.getContentPane().add(button_51, gbc_button_51);
 		
 	}
