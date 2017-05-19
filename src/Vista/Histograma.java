@@ -22,7 +22,7 @@ import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Ventana5 {
+public class Histograma {
 
 	private JFrame frmSeleccionDePlaza;
 
@@ -31,7 +31,7 @@ public class Ventana5 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Ventana5 window = new Ventana5();
+					Histograma window = new Histograma();
 					window.frmSeleccionDePlaza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +42,7 @@ public class Ventana5 {
 	}
 
 	
-	public Ventana5() {
+	public Histograma() {
 		initialize();
 
 	}
