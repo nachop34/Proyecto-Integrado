@@ -69,12 +69,15 @@ public class Mostrarvuelos {
 		frame.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
 		
 		JList list = new JList();
-		list.setToolTipText("cosa1\r\ncosa2\r\ncosa3\r\ncosa4\r\ncosa5\r\ncosa6\r\ncosa7\r\ncosas\r\nmuchas cosas\r\na veces pasa\r\nla vida es as\u00ED\r\nla vida sigue\r\npero \u00E1nimo\r\nno te dejes vencer");
 		GridBagConstraints gbc_list = new GridBagConstraints();
+		gbc_list.gridheight = 5;
+		gbc_list.gridwidth = 4;
 		gbc_list.insets = new Insets(0, 0, 5, 5);
 		gbc_list.fill = GridBagConstraints.BOTH;
-		gbc_list.gridx = 1;
-		gbc_list.gridy = 3;
+		gbc_list.gridx = 4;
+		gbc_list.gridy = 2;
+
+		//list.setModel(cv.mostrarVuelos);
 		frame.getContentPane().add(list, gbc_list);
 		
 		JButton btnAtrs = new JButton("Atr\u00E1s");
