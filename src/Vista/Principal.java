@@ -69,18 +69,22 @@ public class Principal {
 		gbc_btnMostrarV.gridy = 3;
 		frame.getContentPane().add(btnMostrarV, gbc_btnMostrarV);
 		
+		JButton btnMostrarR = new JButton("Ver Reservas Realizadas");
+		btnMostrarR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
 		JButton btnHacerR = new JButton("Hacer Reserva");
+		btnHacerR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		GridBagConstraints gbc_btnHacerR = new GridBagConstraints();
 		gbc_btnHacerR.insets = new Insets(0, 0, 5, 5);
 		gbc_btnHacerR.gridx = 3;
 		gbc_btnHacerR.gridy = 5;
 		frame.getContentPane().add(btnHacerR, gbc_btnHacerR);
-		
-		JButton btnMostrarR = new JButton("Mostrar Reserva Realizada");
-		btnMostrarR.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		GridBagConstraints gbc_btnMostrarR = new GridBagConstraints();
 		gbc_btnMostrarR.insets = new Insets(0, 0, 5, 5);
 		gbc_btnMostrarR.gridx = 3;

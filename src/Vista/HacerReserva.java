@@ -101,14 +101,14 @@ public class HacerReserva extends JFrame {
 		gbc_btnHacerReserva.gridy = 7;
 		contentPane.add(btnHacerReserva, gbc_btnHacerReserva);
 		
-		JButton button = new JButton("New button");
-		button.setHorizontalAlignment(SwingConstants.LEFT);
-		GridBagConstraints gbc_button = new GridBagConstraints();
-		gbc_button.anchor = GridBagConstraints.WEST;
-		gbc_button.insets = new Insets(0, 0, 0, 5);
-		gbc_button.gridx = 1;
-		gbc_button.gridy = 8;
-		contentPane.add(button, gbc_button);
+		JButton btnAtras = new JButton("Atras");
+		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
+		GridBagConstraints gbc_btnAtras = new GridBagConstraints();
+		gbc_btnAtras.anchor = GridBagConstraints.WEST;
+		gbc_btnAtras.insets = new Insets(0, 0, 0, 5);
+		gbc_btnAtras.gridx = 1;
+		gbc_btnAtras.gridy = 8;
+		contentPane.add(btnAtras, gbc_btnAtras);
 	}
 
 }
