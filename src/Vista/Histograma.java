@@ -82,7 +82,7 @@ public class Histograma {
 		frmSeleccionDePlaza.getContentPane().add(titol, gbc_lblNewLabel);
 		
 		JLabel lblV = new JLabel("V");
-		lblV.setFont(new Font("Tahoma", Font.BOLD, 36));
+		lblV.setFont(new Font("Rockwell", Font.BOLD, 36));
 		GridBagConstraints gbc_lblV = new GridBagConstraints();
 		gbc_lblV.insets = new Insets(0, 0, 5, 5);
 		gbc_lblV.gridx = 2;
@@ -181,7 +181,7 @@ public class Histograma {
 		frmSeleccionDePlaza.getContentPane().add(button_11, gbc_button_11);
 		
 		JLabel lblP = new JLabel("P");
-		lblP.setFont(new Font("Tahoma", Font.BOLD, 36));
+		lblP.setFont(new Font("Rockwell", Font.BOLD, 36));
 		GridBagConstraints gbc_lblP = new GridBagConstraints();
 		gbc_lblP.insets = new Insets(0, 0, 5, 5);
 		gbc_lblP.gridx = 2;
@@ -280,7 +280,7 @@ public class Histograma {
 		frmSeleccionDePlaza.getContentPane().add(button_24, gbc_button_24);
 		
 		JLabel lblV_1 = new JLabel("P");
-		lblV_1.setFont(new Font("Tahoma", Font.BOLD, 36));
+		lblV_1.setFont(new Font("Rockwell", Font.BOLD, 36));
 		GridBagConstraints gbc_lblV_1 = new GridBagConstraints();
 		gbc_lblV_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblV_1.gridx = 2;
@@ -379,7 +379,7 @@ public class Histograma {
 		frmSeleccionDePlaza.getContentPane().add(button_37, gbc_button_37);
 		
 		JLabel lblV_2 = new JLabel("V");
-		lblV_2.setFont(new Font("Tahoma", Font.BOLD, 36));
+		lblV_2.setFont(new Font("Rockwell", Font.BOLD, 36));
 		GridBagConstraints gbc_lblV_2 = new GridBagConstraints();
 		gbc_lblV_2.insets = new Insets(0, 0, 5, 5);
 		gbc_lblV_2.gridx = 2;

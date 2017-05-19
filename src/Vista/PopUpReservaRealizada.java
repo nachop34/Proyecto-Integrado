@@ -54,7 +54,7 @@ public class PopUpReservaRealizada {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		JLabel lblNewLabel = new JLabel("Su reserva ha sido realizada con éxito");
-		lblNewLabel.setFont(new Font("Rockwell", Font.PLAIN, 17));
+		lblNewLabel.setFont(new Font("Rockwell", Font.BOLD, 17));
 		lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();

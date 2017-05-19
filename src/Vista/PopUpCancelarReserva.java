@@ -55,7 +55,7 @@ public class PopUpCancelarReserva {
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		JLabel lblNewLabel = new JLabel("Su reserva ha sido cancelada");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lblNewLabel.setFont(new Font("Rockwell", Font.BOLD, 21));
 		lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
