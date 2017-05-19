@@ -9,11 +9,16 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.SwingConstants;
+
+import Controlador.ConsultasVuelo;
+
+import javax.swing.JScrollPane;
 
 public class Mostrarvuelos {
 
@@ -46,6 +51,7 @@ public class Mostrarvuelos {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		ConsultasVuelo cv = new ConsultasVuelo();
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,17 +74,20 @@ public class Mostrarvuelos {
 		gbc_lblNewLabel.gridy = 1;
 		frame.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
 		
-		JList list = new JList();
-		GridBagConstraints gbc_list = new GridBagConstraints();
-		gbc_list.gridheight = 5;
-		gbc_list.gridwidth = 4;
-		gbc_list.insets = new Insets(0, 0, 5, 5);
-		gbc_list.fill = GridBagConstraints.BOTH;
-		gbc_list.gridx = 4;
-		gbc_list.gridy = 2;
+		JScrollPane scrollPane = new JScrollPane();
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.gridx = 1;
+		gbc_scrollPane.gridy = 3;
+		frame.getContentPane().add(scrollPane, gbc_scrollPane);
+		
+		DefaultListModel vuelos = cv.mostrarVuelos();
+		
+		JList list = new JList(vuelos);
+		scrollPane.setViewportView(list);
+		
 
-		//list.setModel(cv.mostrarVuelos);
-		frame.getContentPane().add(list, gbc_list);
 		
 		JButton btnAtrs = new JButton("Atr\u00E1s");
 		GridBagConstraints gbc_btnAtrs = new GridBagConstraints();

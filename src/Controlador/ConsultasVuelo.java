@@ -37,6 +37,9 @@ public class ConsultasVuelo {
 		            vm.setHLlegada(rs.getString("HLlegada"));
 		            vm.setPlazas(rs.getInt("Plazas"));
 		            vm.setIdAerolinea(rs.getInt("IdAerolinea"));
+		            model.addElement(vm.getIdVUELO()+", "+vm.getCOrigen()+", "+vm.getCDestino()
+		            +", "+vm.getHSalida()+",  "+vm.getHLlegada()+", "+vm.getPlazas()+", "+vm.getIdAerolinea());
+		            
 		       }
 			} catch (SQLException e) {
 				e.printStackTrace();
