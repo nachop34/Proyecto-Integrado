@@ -20,7 +20,7 @@ public class ConsultasVuelo {
 
 	}
 	
-	public DefaultListModel cogerVehiculos(){
+	public DefaultListModel mostrarVuelos(){
     	    ResultSet rs = null;
     		BD cn = new BD();
     		DefaultListModel model = new DefaultListModel();
