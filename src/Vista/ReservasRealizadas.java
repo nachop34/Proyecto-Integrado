@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
 
 public class ReservasRealizadas {
 
-	private JFrame frame;
+	JFrame frame4;
 
 	/**
 	 * Launch the application.
@@ -33,7 +33,7 @@ public class ReservasRealizadas {
 			public void run() {
 				try {
 					ReservasRealizadas window = new ReservasRealizadas();
-					window.frame.setVisible(true);
+					window.frame4.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -52,15 +52,15 @@ public class ReservasRealizadas {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame4 = new JFrame();
+		frame4.setBounds(100, 100, 450, 300);
+		frame4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 233, 0, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 28, 23, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
-		frame.getContentPane().setLayout(gridBagLayout);
+		frame4.getContentPane().setLayout(gridBagLayout);
 		
 		JLabel lblNewLabel = new JLabel("Reservas Realizadas");
 		lblNewLabel.setVerticalAlignment(SwingConstants.CENTER);
@@ -72,7 +72,7 @@ public class ReservasRealizadas {
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.gridx = 1;
 		gbc_lblNewLabel.gridy = 1;
-		frame.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
+		frame4.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.addActionListener(new ActionListener() {
@@ -87,19 +87,26 @@ public class ReservasRealizadas {
 		gbc_list.fill = GridBagConstraints.BOTH;
 		gbc_list.gridx = 1;
 		gbc_list.gridy = 3;
-		frame.getContentPane().add(list, gbc_list);
+		frame4.getContentPane().add(list, gbc_list);
 		btnCancelar.setHorizontalAlignment(SwingConstants.LEFT);
 		GridBagConstraints gbc_btnCancelar = new GridBagConstraints();
 		gbc_btnCancelar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnCancelar.gridx = 1;
 		gbc_btnCancelar.gridy = 4;
-		frame.getContentPane().add(btnCancelar, gbc_btnCancelar);
+		frame4.getContentPane().add(btnCancelar, gbc_btnCancelar);
 		
 		JButton btnAtrs = new JButton("Atr\u00E1s");
+		btnAtrs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame4.dispose();
+				Principal window = new Principal();
+				window.frame.setVisible(true);
+			}
+		});
 		GridBagConstraints gbc_btnAtrs = new GridBagConstraints();
 		gbc_btnAtrs.insets = new Insets(0, 0, 0, 5);
 		gbc_btnAtrs.gridx = 0;
 		gbc_btnAtrs.gridy = 5;
-		frame.getContentPane().add(btnAtrs, gbc_btnAtrs);
+		frame4.getContentPane().add(btnAtrs, gbc_btnAtrs);
 	}
 }

@@ -15,6 +15,8 @@ import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JList;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class HacerReserva extends JFrame {
 
@@ -27,8 +29,8 @@ public class HacerReserva extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					HacerReserva frame = new HacerReserva();
-					frame.setVisible(true);
+					HacerReserva frame3 = new HacerReserva();
+					frame3.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -102,6 +104,15 @@ public class HacerReserva extends JFrame {
 		contentPane.add(btnHacerReserva, gbc_btnHacerReserva);
 		
 		JButton btnAtras = new JButton("Atras");
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Principal window = new Principal();
+				window.frame.setVisible(true);
+			}
+
+		
+		});
 		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
 		GridBagConstraints gbc_btnAtras = new GridBagConstraints();
 		gbc_btnAtras.anchor = GridBagConstraints.WEST;

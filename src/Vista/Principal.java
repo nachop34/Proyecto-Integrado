@@ -15,7 +15,7 @@ import java.awt.Font;
 
 public class Principal {
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -63,6 +63,15 @@ public class Principal {
 		frame.getContentPane().add(lblMenu, gbc_lblMenu);
 		
 		JButton btnMostrarV = new JButton("Mostrar Vuelos");
+		btnMostrarV.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				Mostrarvuelos window = new Mostrarvuelos();
+				window.frame2.setVisible(true);
+			}
+		});
+
 		GridBagConstraints gbc_btnMostrarV = new GridBagConstraints();
 		gbc_btnMostrarV.insets = new Insets(0, 0, 5, 5);
 		gbc_btnMostrarV.gridx = 3;
@@ -72,12 +81,18 @@ public class Principal {
 		JButton btnMostrarR = new JButton("Ver Reservas Realizadas");
 		btnMostrarR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				ReservasRealizadas window = new ReservasRealizadas();
+				window.frame4.setVisible(true);
 			}
 		});
 		
 		JButton btnHacerR = new JButton("Hacer Reserva");
 		btnHacerR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
+				HacerReserva frame3 = new HacerReserva();
+				frame3.setVisible(true);
 			}
 		});
 		GridBagConstraints gbc_btnHacerR = new GridBagConstraints();
