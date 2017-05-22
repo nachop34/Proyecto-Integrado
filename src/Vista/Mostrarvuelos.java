@@ -94,13 +94,12 @@ public class Mostrarvuelos {
 		scrollPane.setViewportView(table);
 		ArrayList<VueloModelo> tabla = cv.mostrarVuelos();
 		
-		DefaultTableModel model = new DefaultTableModel(new Object[]{"ID Vuelo", "Origen", "Destino", 
-				"Hora Salida", "Hora Llegada", "ID Aerolinea"},0);
+		DefaultTableModel model = new DefaultTableModel(new Object[]{"Aerolinea", "ID Vuelo", "Origen", "Destino", 
+				"Hora Salida", "Hora Llegada"},0);
 		
 			for (int i=0;i<tabla.size();i++){
-				model.addRow(new Object[]{tabla.get(i).getIdVUELO(), tabla.get(i).getCOrigen(),
-						tabla.get(i).getCDestino(), tabla.get(i).getHSalida(), tabla.get(i).getHLlegada(),
-						tabla.get(i).getIdAerolinea()});
+				model.addRow(new Object[]{tabla.get(i).getAerolinea(), tabla.get(i).getIdVUELO(), tabla.get(i).getCOrigen(),
+						tabla.get(i).getCDestino(), tabla.get(i).getHSalida(), tabla.get(i).getHLlegada()});
 			}
 		table.setModel(model);
 		

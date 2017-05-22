@@ -27,7 +27,8 @@ public class ConsultasVuelo {
     	
 		try {
 			stmt = cn.getConexion().createStatement();
-			rs = stmt.executeQuery("SELECT * FROM vuelo");
+			rs = stmt.executeQuery("SELECT A.Nombre, IdVuelo, COrigen, CDestino, HSalida, HLlegada, Plazas "
+					+ "FROM aerolinea A JOIN vuelo V ON A.IdAerolinea = V.IdAerolinea");
 			while (rs.next()) {
 	        	VueloModelo vm = new VueloModelo();
 	            vm.setIdVUELO(rs.getInt("IdVuelo"));
@@ -36,7 +37,7 @@ public class ConsultasVuelo {
 	            vm.setHSalida(rs.getString("HSalida"));
 	            vm.setHLlegada(rs.getString("HLlegada"));
 	            vm.setPlazas(rs.getInt("Plazas"));
-	            vm.setIdAerolinea(rs.getInt("IdAerolinea"));
+	            vm.setAerolinea(rs.getString("A.Nombre"));
 	            tabla.add(vm);
 	            }
 		} catch (SQLException e) {
