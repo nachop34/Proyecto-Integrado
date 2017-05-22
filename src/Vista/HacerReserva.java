@@ -6,16 +6,22 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Controlador.VuelosDestino;
+import Controlador.VuelosOrigen;
+
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JComboBox;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JList;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class HacerReserva extends JFrame {
@@ -70,21 +76,28 @@ public class HacerReserva extends JFrame {
 		gbc_lblDestino.gridy = 1;
 		contentPane.add(lblDestino, gbc_lblDestino);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
-		gbc_comboBox_1.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox_1.gridx = 1;
-		gbc_comboBox_1.gridy = 2;
-		contentPane.add(comboBox_1, gbc_comboBox_1);
+		VuelosOrigen vo = new VuelosOrigen();
+		ArrayList <String> listadoVuelosOrigen =vo.vorigen();
+		JComboBox origen = new JComboBox(listadoVuelosOrigen.toArray());
 		
-		JComboBox comboBox_2 = new JComboBox();
-		GridBagConstraints gbc_comboBox_2 = new GridBagConstraints();
-		gbc_comboBox_2.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox_2.gridx = 3;
-		gbc_comboBox_2.gridy = 2;
-		contentPane.add(comboBox_2, gbc_comboBox_2);
+		
+		GridBagConstraints gbc_origen = new GridBagConstraints();
+		gbc_origen.insets = new Insets(0, 0, 5, 5);
+		gbc_origen.fill = GridBagConstraints.HORIZONTAL;
+		gbc_origen.gridx = 1;
+		gbc_origen.gridy = 2;
+		contentPane.add(origen, gbc_origen);
+		
+		VuelosDestino vd = new VuelosDestino();
+		ArrayList <String> listadoVuelosDestino =vd.vdestino();
+		
+		JComboBox destino = new JComboBox(listadoVuelosDestino.toArray());
+		GridBagConstraints gbc_destino = new GridBagConstraints();
+		gbc_destino.insets = new Insets(0, 0, 5, 5);
+		gbc_destino.fill = GridBagConstraints.HORIZONTAL;
+		gbc_destino.gridx = 3;
+		gbc_destino.gridy = 2;
+		contentPane.add(destino, gbc_destino);
 		
 		JList list = new JList();
 		GridBagConstraints gbc_list = new GridBagConstraints();
