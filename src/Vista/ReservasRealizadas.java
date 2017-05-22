@@ -5,10 +5,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.GridLayout;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Component;
 import javax.swing.SwingConstants;
+
+import Controlador.ConsultasReserva;
+
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
@@ -20,6 +24,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
 
 public class ReservasRealizadas {
 
@@ -52,9 +57,13 @@ public class ReservasRealizadas {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+
+
+		ConsultasReserva rv = new ConsultasReserva();
 		frame4 = new JFrame();
 		frame4.setBounds(100, 100, 450, 300);
 		frame4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 233, 0, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 28, 23, 0, 0, 0, 0};
@@ -80,6 +89,7 @@ public class ReservasRealizadas {
 			}
 		});
 		
+
 		JList list = new JList();
 		list.setToolTipText("cosa1\r\ncosa2\r\ncosa3\r\ncosa4\r\ncosa5\r\ncosa6\r\ncosa7\r\ncosas\r\nmuchas cosas\r\na veces pasa\r\nla vida es as\u00ED\r\nla vida sigue\r\npero \u00E1nimo\r\nno te dejes vencer");
 		GridBagConstraints gbc_list = new GridBagConstraints();
@@ -88,6 +98,22 @@ public class ReservasRealizadas {
 		gbc_list.gridx = 1;
 		gbc_list.gridy = 3;
 		frame4.getContentPane().add(list, gbc_list);
+
+		JScrollPane scrollPane = new JScrollPane();
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+
+		gbc_scrollPane.gridx = 1;
+		gbc_scrollPane.gridy = 3;
+		frame4.getContentPane().add(scrollPane, gbc_scrollPane);
+
+		DefaultListModel reservas = rv.mostrarReserva();
+		
+		JList list1 = new JList(reservas);
+		scrollPane.setViewportView(list1);
+		
+		
 		btnCancelar.setHorizontalAlignment(SwingConstants.LEFT);
 		GridBagConstraints gbc_btnCancelar = new GridBagConstraints();
 		gbc_btnCancelar.insets = new Insets(0, 0, 5, 5);

@@ -14,7 +14,7 @@ public class BD {
 			System.err.println(e);
 		}
 		try{
-			String cadenaDeConnexio = "jdbc:mysql://localhost/?user=root&password=";
+			String cadenaDeConnexio = "jdbc:mysql://localhost/alianzaaerolines?user=root&password=";
 			conexion= DriverManager.getConnection(cadenaDeConnexio);
 		}catch(Exception e){
 			System.err.println("Error connectant a mysql/alianzaerolines amb user=root");
