@@ -3,18 +3,23 @@ package Vista;
 import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Frame;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.SwingConstants;
+
+import Controlador.ConsultasVuelo;
+
+import javax.swing.JScrollPane;
+import java.awt.Color;
 
 public class Mostrarvuelos {
 
@@ -47,7 +52,9 @@ public class Mostrarvuelos {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		ConsultasVuelo cv = new ConsultasVuelo();
 		frame2 = new JFrame();
+		frame2.getContentPane().setBackground(new Color(135, 206, 250));
 		frame2.setBounds(100, 100, 450, 300);
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -58,6 +65,7 @@ public class Mostrarvuelos {
 		frame2.getContentPane().setLayout(gridBagLayout);
 		
 		JLabel lblNewLabel = new JLabel("Vuelos Disponibles");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setVerticalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
@@ -69,24 +77,28 @@ public class Mostrarvuelos {
 		gbc_lblNewLabel.gridy = 1;
 		frame2.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
 		
-		JList list = new JList();
-		GridBagConstraints gbc_list = new GridBagConstraints();
-		gbc_list.gridheight = 5;
-		gbc_list.gridwidth = 4;
-		gbc_list.insets = new Insets(0, 0, 5, 5);
-		gbc_list.fill = GridBagConstraints.BOTH;
-		gbc_list.gridx = 4;
-		gbc_list.gridy = 2;
+		JScrollPane scrollPane = new JScrollPane();
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.gridx = 1;
+		gbc_scrollPane.gridy = 3;
+		frame2.getContentPane().add(scrollPane, gbc_scrollPane);
+		
+		DefaultListModel vuelos = cv.mostrarVuelos();
+		
+		JList list = new JList(vuelos);
+		scrollPane.setViewportView(list);
+		
 
-		//list.setModel(cv.mostrarVuelos);
-		frame2.getContentPane().add(list, gbc_list);
 		
 		JButton btnAtrs = new JButton("Atr\u00E1s");
 		btnAtrs.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent arg0) {
 				frame2.dispose();
 				Principal window = new Principal();
 				window.frame.setVisible(true);
+				
 			}
 		});
 		GridBagConstraints gbc_btnAtrs = new GridBagConstraints();
