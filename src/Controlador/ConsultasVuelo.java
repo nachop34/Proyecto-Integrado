@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 
-import javax.swing.DefaultListModel;
 
 import Modelo.BD;
 import Modelo.VueloModelo;
@@ -20,30 +19,30 @@ public class ConsultasVuelo {
 
 	}
 	
-	public DefaultListModel mostrarVuelos(){
-    	    ResultSet rs = null;
-    		BD cn = new BD();
-    		DefaultListModel model = new DefaultListModel();
-	    	Statement stmt;
-			try {
-				stmt = cn.getConexion().createStatement();
-				rs = stmt.executeQuery("SELECT * FROM vuelo");
-				while (rs.next()) {
-		        	VueloModelo vm = new VueloModelo();
-		            vm.setIdVUELO(rs.getInt("IdVuelo"));
-		            vm.setCOrigen(rs.getString("Corigen"));
-		            vm.setCDestino(rs.getString("CDestino"));
-		            vm.setHSalida(rs.getString("HSalida"));
-		            vm.setHLlegada(rs.getString("HLlegada"));
-		            vm.setPlazas(rs.getInt("Plazas"));
-		            vm.setIdAerolinea(rs.getInt("IdAerolinea"));
-		            model.addElement(vm.getIdVUELO()+", "+vm.getCOrigen()+", "+vm.getCDestino()
-		            +", "+vm.getHSalida()+",  "+vm.getHLlegada()+", "+vm.getPlazas()+", "+vm.getIdAerolinea());
-		            
-		       }
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}		
-	    return model;
+	public ArrayList<VueloModelo> mostrarVuelos(){
+	    ResultSet rs = null;
+		BD cn = new BD();
+    	Statement stmt;
+    	ArrayList<VueloModelo> tabla = new ArrayList<VueloModelo>();
+    	
+		try {
+			stmt = cn.getConexion().createStatement();
+			rs = stmt.executeQuery("SELECT A.Nombre, IdVuelo, COrigen, CDestino, HSalida, HLlegada, Plazas "
+					+ "FROM aerolinea A JOIN vuelo V ON A.IdAerolinea = V.IdAerolinea");
+			while (rs.next()) {
+	        	VueloModelo vm = new VueloModelo();
+	            vm.setIdVUELO(rs.getInt("IdVuelo"));
+	            vm.setCOrigen(rs.getString("Corigen"));
+	            vm.setCDestino(rs.getString("CDestino"));
+	            vm.setHSalida(rs.getString("HSalida"));
+	            vm.setHLlegada(rs.getString("HLlegada"));
+	            vm.setPlazas(rs.getInt("Plazas"));
+	            vm.setAerolinea(rs.getString("A.Nombre"));
+	            tabla.add(vm);
+	            }
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+		return tabla;
 	}
 }

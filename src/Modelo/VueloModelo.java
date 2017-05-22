@@ -7,7 +7,7 @@ public class VueloModelo {
 	private String HSalida;
 	private String HLlegada;
 	private int Plazas;
-	private int idAerolinea;
+	private String Aerolinea;
 	public VueloModelo() {
 		this.idVUELO = 0;
 		this.COrigen = "";
@@ -15,7 +15,7 @@ public class VueloModelo {
 		this.HSalida = "";
 		this.HLlegada = "";
 		this.Plazas = 52;
-		this.idAerolinea = 0;
+		this.Aerolinea = "";
 	}
 	public int getIdVUELO() {
 		return idVUELO;
@@ -53,10 +53,10 @@ public class VueloModelo {
 	public void setPlazas(int plazas) {
 		Plazas = plazas;
 	}
-	public int getIdAerolinea() {
-		return idAerolinea;
+	public String getAerolinea() {
+		return Aerolinea;
 	}
-	public void setIdAerolinea(int idAerolinea) {
-		this.idAerolinea = idAerolinea;
+	public void setAerolinea(String aerolinea) {
+		Aerolinea = aerolinea;
 	}
 }

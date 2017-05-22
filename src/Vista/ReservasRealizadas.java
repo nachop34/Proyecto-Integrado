@@ -10,8 +10,11 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Component;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 
 import Controlador.ConsultasReserva;
+import Modelo.ReservaModelo;
+import Modelo.VueloModelo;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -23,13 +26,16 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import java.awt.Color;
+import javax.swing.JTable;
 
 public class ReservasRealizadas {
 
 	JFrame frame4;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -97,12 +103,19 @@ public class ReservasRealizadas {
 		gbc_scrollPane.gridx = 1;
 		gbc_scrollPane.gridy = 3;
 		frame4.getContentPane().add(scrollPane, gbc_scrollPane);
-
-		DefaultListModel reservas = rv.mostrarReserva();
 		
-		JList list = new JList(reservas);
-		scrollPane.setViewportView(list);
+		table = new JTable();
+		scrollPane.setViewportView(table);
 		
+		ArrayList<ReservaModelo> tabla = rv.mostrarReservas();
+		
+		DefaultTableModel model = new DefaultTableModel(new Object[]{"ID Reserva", "Pasajero", "Plaza", "ID Vuelo"},0);
+		
+			for (int i=0;i<tabla.size();i++){
+				model.addRow(new Object[]{tabla.get(i).getIdReserva(), tabla.get(i).getPasajero(),
+						tabla.get(i).getPlaza(), tabla.get(i).getIdVuelo()});
+			}
+		table.setModel(model);
 		
 		btnCancelar.setHorizontalAlignment(SwingConstants.LEFT);
 		GridBagConstraints gbc_btnCancelar = new GridBagConstraints();

@@ -8,6 +8,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -15,15 +16,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 
 import Controlador.ConsultasVuelo;
+import Modelo.VueloModelo;
 
 import javax.swing.JScrollPane;
 import java.awt.Color;
+import javax.swing.JTable;
 
 public class Mostrarvuelos {
 
 	JFrame frame2;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -85,12 +90,19 @@ public class Mostrarvuelos {
 		gbc_scrollPane.gridy = 3;
 		frame2.getContentPane().add(scrollPane, gbc_scrollPane);
 		
-		DefaultListModel vuelos = cv.mostrarVuelos();
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		ArrayList<VueloModelo> tabla = cv.mostrarVuelos();
 		
-		JList list = new JList(vuelos);
-		scrollPane.setViewportView(list);
+		DefaultTableModel model = new DefaultTableModel(new Object[]{"Aerolinea", "ID Vuelo", "Origen", "Destino", 
+				"Hora Salida", "Hora Llegada"},0);
 		
-
+			for (int i=0;i<tabla.size();i++){
+				model.addRow(new Object[]{tabla.get(i).getAerolinea(), tabla.get(i).getIdVUELO(), tabla.get(i).getCOrigen(),
+						tabla.get(i).getCDestino(), tabla.get(i).getHSalida(), tabla.get(i).getHLlegada()});
+			}
+		table.setModel(model);
+		
 		
 		JButton btnAtrs = new JButton("Atr\u00E1s");
 		btnAtrs.addActionListener(new ActionListener() {
