@@ -3,9 +3,6 @@ package Vista;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Component;
@@ -14,14 +11,9 @@ import javax.swing.table.DefaultTableModel;
 
 import Controlador.ConsultasReserva;
 import Modelo.ReservaModelo;
-import Modelo.VueloModelo;
 
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
+
 import javax.swing.JButton;
-import javax.swing.JSplitPane;
-import javax.swing.SpringLayout;
-import javax.swing.JList;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;

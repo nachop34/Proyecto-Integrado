@@ -1,19 +1,13 @@
 package Controlador;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
 
-import javax.swing.DefaultListModel;
 
 import Modelo.BD;
 import Modelo.ReservaModelo;
-import Modelo.VueloModelo;
 
 public class ConsultasReserva {
 
