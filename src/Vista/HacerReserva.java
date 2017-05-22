@@ -17,6 +17,7 @@ import javax.swing.JList;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class HacerReserva extends JFrame {
 
@@ -45,16 +46,18 @@ public class HacerReserva extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(135, 206, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{29, 194, 87, 202, 26, 0};
+		gbl_contentPane.columnWidths = new int[]{29, 149, 87, 147, 26, 0};
 		gbl_contentPane.rowHeights = new int[]{0, 30, 0, 0, 31, 0, 0, 0, 0, 0};
 		gbl_contentPane.columnWeights = new double[]{0.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
 		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
 		JLabel lblOrigen = new JLabel("Origen");
+		lblOrigen.setForeground(new Color(255, 255, 255));
 		lblOrigen.setFont(new Font("Rockwell", Font.BOLD, 18));
 		GridBagConstraints gbc_lblOrigen = new GridBagConstraints();
 		gbc_lblOrigen.insets = new Insets(0, 0, 5, 5);
@@ -63,6 +66,7 @@ public class HacerReserva extends JFrame {
 		contentPane.add(lblOrigen, gbc_lblOrigen);
 		
 		JLabel lblDestino = new JLabel("Destino");
+		lblDestino.setForeground(new Color(255, 255, 255));
 		lblDestino.setFont(new Font("Rockwell", Font.BOLD, 18));
 		GridBagConstraints gbc_lblDestino = new GridBagConstraints();
 		gbc_lblDestino.insets = new Insets(0, 0, 5, 5);

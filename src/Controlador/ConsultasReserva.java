@@ -13,6 +13,7 @@ import javax.swing.DefaultListModel;
 
 import Modelo.BD;
 import Modelo.ReservaModelo;
+import Modelo.VueloModelo;
 
 public class ConsultasReserva {
 
@@ -20,11 +21,12 @@ public class ConsultasReserva {
 
 	}
 	
-	public DefaultListModel mostrarReserva(){
-    	    ResultSet rs = null;
-    		BD cn = new BD();
-    		DefaultListModel model = new DefaultListModel();
-	    	Statement stmt;
+	public ArrayList<ReservaModelo> mostrarReservas(){
+	    ResultSet rs = null;
+		BD cn = new BD();
+    	Statement stmt;
+    	ArrayList<ReservaModelo> tabla = new ArrayList<ReservaModelo>();
+    	
 			try {
 				stmt = cn.getConexion().createStatement();
 				rs = stmt.executeQuery("SELECT * FROM reserva");
@@ -34,15 +36,12 @@ public class ConsultasReserva {
 		            rm.setPasajero(rs.getString("Pasajero"));
 		            rm.setPlaza(rs.getInt("Plaza"));
 		            rm.setIdVuelo(rs.getInt("IdVuelo"));
-		            
-		            
-		            model.addElement(rm.getIdReserva()+", "+rm.getPasajero()+", "+rm.getPlaza()
-		            +", "+rm.getIdVuelo());
+		            tabla.add(rm);
 		            
 		       }
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}		
-	    return model;
+	    return tabla;
 	}
 }
