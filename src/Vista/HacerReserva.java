@@ -30,11 +30,14 @@ import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class HacerReserva extends JFrame {
 
 	private JPanel contentPane;
 	JComboBox destino;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -66,7 +69,7 @@ public class HacerReserva extends JFrame {
 		gbl_contentPane.columnWidths = new int[]{29, 149, 87, 147, 26, 0};
 		gbl_contentPane.rowHeights = new int[]{0, 30, 0, 0, 31, 0, 0, 0, 0, 0};
 		gbl_contentPane.columnWeights = new double[]{0.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
-		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
 		JLabel lblOrigen = new JLabel("Origen");
@@ -127,15 +130,18 @@ public class HacerReserva extends JFrame {
 		gbc_destino.gridy = 2;
 		contentPane.add(destino, gbc_destino);
 		
-		JList list = new JList();
-		GridBagConstraints gbc_list = new GridBagConstraints();
-		gbc_list.gridheight = 4;
-		gbc_list.gridwidth = 3;
-		gbc_list.insets = new Insets(0, 0, 5, 5);
-		gbc_list.fill = GridBagConstraints.BOTH;
-		gbc_list.gridx = 1;
-		gbc_list.gridy = 3;
-		contentPane.add(list, gbc_list);
+		JScrollPane scrollPane = new JScrollPane();
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.gridheight = 4;
+		gbc_scrollPane.gridwidth = 3;
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.gridx = 1;
+		gbc_scrollPane.gridy = 3;
+		contentPane.add(scrollPane, gbc_scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
 		
 		JButton btnHacerReserva = new JButton("Hacer Reserva");
 		GridBagConstraints gbc_btnHacerReserva = new GridBagConstraints();

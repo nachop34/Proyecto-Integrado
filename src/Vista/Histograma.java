@@ -49,7 +49,7 @@ public class Histograma {
 	
 	private void initialize() {
 		frmSeleccionDePlaza = new JFrame();
-		frmSeleccionDePlaza.getContentPane().setBackground(new Color(255, 255, 225));
+		frmSeleccionDePlaza.getContentPane().setBackground(new Color(135, 206, 250));
 		frmSeleccionDePlaza.setBackground(Color.YELLOW);
 		frmSeleccionDePlaza.setForeground(Color.YELLOW);
 		frmSeleccionDePlaza.setTitle("Seleccion de plaza");
@@ -71,8 +71,9 @@ public class Histograma {
 		
 	
 		
-		JLabel titol = new JLabel("Avions S.L");
-		titol.setFont(new Font("Tahoma", Font.BOLD, 30));
+		JLabel titol = new JLabel("SkyTeam");
+		titol.setForeground(new Color(255, 255, 255));
+		titol.setFont(new Font("Rockwell", Font.BOLD, 30));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.gridwidth = 6;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
@@ -81,6 +82,7 @@ public class Histograma {
 		frmSeleccionDePlaza.getContentPane().add(titol, gbc_lblNewLabel);
 		
 		JLabel lblV = new JLabel("V");
+		lblV.setForeground(new Color(255, 255, 255));
 		lblV.setFont(new Font("Rockwell", Font.BOLD, 36));
 		GridBagConstraints gbc_lblV = new GridBagConstraints();
 		gbc_lblV.insets = new Insets(0, 0, 5, 5);
@@ -180,6 +182,7 @@ public class Histograma {
 		frmSeleccionDePlaza.getContentPane().add(button_11, gbc_button_11);
 		
 		JLabel lblP = new JLabel("P");
+		lblP.setForeground(new Color(255, 255, 255));
 		lblP.setFont(new Font("Rockwell", Font.BOLD, 36));
 		GridBagConstraints gbc_lblP = new GridBagConstraints();
 		gbc_lblP.insets = new Insets(0, 0, 5, 5);
@@ -279,6 +282,7 @@ public class Histograma {
 		frmSeleccionDePlaza.getContentPane().add(button_24, gbc_button_24);
 		
 		JLabel lblV_1 = new JLabel("P");
+		lblV_1.setForeground(new Color(255, 255, 255));
 		lblV_1.setFont(new Font("Rockwell", Font.BOLD, 36));
 		GridBagConstraints gbc_lblV_1 = new GridBagConstraints();
 		gbc_lblV_1.insets = new Insets(0, 0, 5, 5);
@@ -378,6 +382,7 @@ public class Histograma {
 		frmSeleccionDePlaza.getContentPane().add(button_37, gbc_button_37);
 		
 		JLabel lblV_2 = new JLabel("V");
+		lblV_2.setForeground(new Color(255, 255, 255));
 		lblV_2.setFont(new Font("Rockwell", Font.BOLD, 36));
 		GridBagConstraints gbc_lblV_2 = new GridBagConstraints();
 		gbc_lblV_2.insets = new Insets(0, 0, 5, 5);
