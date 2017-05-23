@@ -12,7 +12,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.Box;
