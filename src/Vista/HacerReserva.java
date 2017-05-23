@@ -15,12 +15,15 @@ import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JComboBox;
+import javax.swing.ComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JList;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -28,6 +31,7 @@ import java.awt.Color;
 public class HacerReserva extends JFrame {
 
 	private JPanel contentPane;
+	JComboBox destino;
 
 	/**
 	 * Launch the application.
@@ -83,6 +87,23 @@ public class HacerReserva extends JFrame {
 		VuelosOrigen vo = new VuelosOrigen();
 		ArrayList <String> listadoVuelosOrigen =vo.vorigen();
 		JComboBox origen = new JComboBox(listadoVuelosOrigen.toArray());
+		origen.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String origenSeleccionat = (String) origen.getSelectedItem();
+				//Fer la consultaper al Desti
+				VuelosDestino vd = new VuelosDestino();
+				ArrayList <String> listadoDestinos =vd.vdestino(origenSeleccionat);
+				
+				//omplir el desplegable del destí amb els valors de l'arrayList
+				destino.removeAllItems();
+				for(int i=0;i<listadoDestinos.size();i++){
+					destino.addItem((String)listadoDestinos.get(i));
+				}
+				
+			}
+		});
 		
 		
 		GridBagConstraints gbc_origen = new GridBagConstraints();
@@ -95,7 +116,7 @@ public class HacerReserva extends JFrame {
 		VuelosDestino vd = new VuelosDestino();
 		ArrayList <String> listadoVuelosDestino =vd.vdestino();
 		
-		JComboBox destino = new JComboBox(listadoVuelosDestino.toArray());
+		destino = new JComboBox(listadoVuelosDestino.toArray());
 		GridBagConstraints gbc_destino = new GridBagConstraints();
 		gbc_destino.insets = new Insets(0, 0, 5, 5);
 		gbc_destino.fill = GridBagConstraints.HORIZONTAL;
