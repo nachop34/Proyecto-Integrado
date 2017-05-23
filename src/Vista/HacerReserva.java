@@ -1,6 +1,5 @@
 package Vista;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,7 +14,7 @@ import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JComboBox;
-import javax.swing.DefaultListModel;
+
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JList;
