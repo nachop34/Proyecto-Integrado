@@ -10,6 +10,9 @@ import java.awt.Insets;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PopUpSinplazas {
 
@@ -43,6 +46,7 @@ public class PopUpSinplazas {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
 		frame.getContentPane().setBackground(new Color(135, 206, 250));
 		frame.setBounds(100, 100, 450, 150);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -63,6 +67,13 @@ public class PopUpSinplazas {
 		frame.getContentPane().add(lblEsteVueloYa, gbc_lblEsteVueloYa);
 		
 		JButton btnNewButton = new JButton("Aceptar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				frame.dispose();
+				
+			}
+		});
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.anchor = GridBagConstraints.ABOVE_BASELINE;
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);

@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 public class Principal {
 
@@ -45,16 +46,17 @@ public class Principal {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
 		frame.getContentPane().setBackground(new Color(135, 206, 250));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] {30, 30, 30, 30, 30, 30, 30};
-		gridBagLayout.rowHeights = new int[] {30, 0, 30, 0, 30, 0, 30, 30, 30};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0};
+		gridBagLayout.columnWidths = new int[] { 30, 30, 30, 30, 30, 30, 30 };
+		gridBagLayout.rowHeights = new int[] { 30, 0, 30, 0, 30, 0, 30, 30, 30 };
+		gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0 };
 		frame.getContentPane().setLayout(gridBagLayout);
-		
+
 		JLabel lblMenu = new JLabel("MENU PRINCIPAL");
 		lblMenu.setForeground(Color.WHITE);
 		lblMenu.setFont(new Font("Rockwell", Font.BOLD, 18));
@@ -63,7 +65,7 @@ public class Principal {
 		gbc_lblMenu.gridx = 3;
 		gbc_lblMenu.gridy = 1;
 		frame.getContentPane().add(lblMenu, gbc_lblMenu);
-		
+
 		JButton btnMostrarV = new JButton("Mostrar Vuelos");
 		btnMostrarV.addActionListener(new ActionListener() {
 			@Override
@@ -79,7 +81,7 @@ public class Principal {
 		gbc_btnMostrarV.gridx = 3;
 		gbc_btnMostrarV.gridy = 3;
 		frame.getContentPane().add(btnMostrarV, gbc_btnMostrarV);
-		
+
 		JButton btnMostrarR = new JButton("Ver Reservas Realizadas");
 		btnMostrarR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -88,7 +90,7 @@ public class Principal {
 				window.frame4.setVisible(true);
 			}
 		});
-		
+
 		JButton btnHacerR = new JButton("Hacer Reserva");
 		btnHacerR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

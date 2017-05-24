@@ -23,6 +23,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JTable;
+import java.awt.Toolkit;
 
 public class ReservasRealizadas {
 
@@ -58,6 +59,7 @@ public class ReservasRealizadas {
 	private void initialize() {
 		ConsultasReserva rv = new ConsultasReserva();
 		frame4 = new JFrame();
+		frame4.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
 		frame4.getContentPane().setBackground(new Color(135, 206, 250));
 		frame4.setBounds(100, 100, 450, 300);
 		frame4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -84,6 +86,7 @@ public class ReservasRealizadas {
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame4.dispose();
 			}
 		});
 		
