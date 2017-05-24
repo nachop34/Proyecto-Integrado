@@ -91,6 +91,7 @@ public class Mostrarvuelos {
 		frame2.getContentPane().add(scrollPane, gbc_scrollPane);
 		
 		table = new JTable();
+		table.setEnabled(false);
 		scrollPane.setViewportView(table);
 		ArrayList<VueloModelo> tabla = cv.mostrarVuelos();
 		
