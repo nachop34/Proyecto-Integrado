@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import Idiomas.Idioma;
 
 import java.awt.GridBagConstraints;
+
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.Insets;
 import java.awt.event.ActionListener;
@@ -70,20 +72,14 @@ public class Principal {
 		frame.getContentPane().add(lblIdioma, gbc_lblIdioma);
 		
 		comboBox = new JComboBox();
-		comboBox.setSelectedItem(Idioma.getIdioma().idim);
-		comboBox.addActionListener(new ActionListener(){
-			public void actionPerformed (ActionEvent e) {
-				try {
-					Idioma.getIdioma().setIdioma((String) comboBox.getSelectedItem());
-					btnHacerR.setText(Idioma)
-				}
-			}
-		}
-		gbc_comboBoxIdioma.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBoxIdioma.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBoxIdioma.gridx = 0;
-		gbc_comboBoxIdioma.gridy = 1;
-		frame.getContentPane().add(comboBox, gbc_comboBoxIdioma);
+
+		
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Español", "English"}));
+		GridBagConstraints gbc_comboBox = new GridBagConstraints();
+		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_comboBox.gridx = 0;
+		gbc_comboBox.gridy = 1;
+		frame.getContentPane().add(comboBox, gbc_comboBox);
 		
 		JLabel lblMenu = new JLabel("MENU PRINCIPAL");
 		lblMenu.setForeground(Color.WHITE);
@@ -137,8 +133,5 @@ public class Principal {
 		gbc_btnMostrarR.gridx = 3;
 		gbc_btnMostrarR.gridy = 7;
 		frame.getContentPane().add(btnMostrarR, gbc_btnMostrarR);
-	}
-
-	comboBox.setModel(new DefaultComboBoxModel(new String[] {"Español", "English"}));
-	
+	}	
 }
