@@ -1,10 +1,9 @@
 package Vista;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
@@ -12,41 +11,23 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 
 public class PopUpSinplazas {
 
 	private JFrame frame;
+	ResourceBundle idioma;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PopUpSinplazas window = new PopUpSinplazas();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
 	public PopUpSinplazas() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
+		frame.setType(Type.POPUP);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PopUpSinplazas.class.getResource("/Imagenes/plane.png")));
 		frame.getContentPane().setBackground(new Color(135, 206, 250));
 		frame.setBounds(100, 100, 450, 150);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +38,7 @@ public class PopUpSinplazas {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblEsteVueloYa = new JLabel("Este vuelo ya no dispone de plazas");
+		JLabel lblEsteVueloYa = new JLabel(idioma.getString("btnEsteVueloYa"));
 		lblEsteVueloYa.setForeground(new Color(255, 255, 255));
 		lblEsteVueloYa.setFont(new Font("Rockwell", Font.BOLD, 20));
 		GridBagConstraints gbc_lblEsteVueloYa = new GridBagConstraints();
@@ -66,20 +47,20 @@ public class PopUpSinplazas {
 		gbc_lblEsteVueloYa.gridy = 1;
 		frame.getContentPane().add(lblEsteVueloYa, gbc_lblEsteVueloYa);
 		
-		JButton btnNewButton = new JButton("Aceptar");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnAcept = new JButton(idioma.getString("btnAcept"));
+		btnAcept.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
 				frame.dispose();
 				
 			}
 		});
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.anchor = GridBagConstraints.ABOVE_BASELINE;
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 2;
-		gbc_btnNewButton.gridy = 3;
-		frame.getContentPane().add(btnNewButton, gbc_btnNewButton);
+		GridBagConstraints gbc_btnAcept = new GridBagConstraints();
+		gbc_btnAcept.anchor = GridBagConstraints.ABOVE_BASELINE;
+		gbc_btnAcept.insets = new Insets(0, 0, 5, 5);
+		gbc_btnAcept.gridx = 2;
+		gbc_btnAcept.gridy = 3;
+		frame.getContentPane().add(btnAcept, gbc_btnAcept);
 	}
 
 }

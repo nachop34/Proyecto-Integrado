@@ -1,6 +1,5 @@
 package Vista;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +23,7 @@ import java.awt.Font;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.Panel;
+import java.awt.Toolkit;
 
 public class Principal extends JFrame implements ItemListener {
 
@@ -31,9 +31,6 @@ public class Principal extends JFrame implements ItemListener {
 	static Idioma idioma;
 	static Principal frame;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -52,6 +49,7 @@ public class Principal extends JFrame implements ItemListener {
 	 * Create the frame.
 	 */
 	public Principal() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/Imagenes/plane.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -128,7 +126,7 @@ public class Principal extends JFrame implements ItemListener {
 				Mostrarvuelos window = new Mostrarvuelos();
 				window.frame2.setVisible(true);
 			}
-		});;
+		});
 		
 		Panel panel = new Panel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();

@@ -1,7 +1,6 @@
 package Vista;
 
 import java.awt.Component;
-import java.awt.EventQueue;
 import java.awt.Font;
 
 import javax.swing.JFrame;
@@ -14,41 +13,21 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 
 public class PopUpReservaRealizada {
 
 	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PopUpReservaRealizada window = new PopUpReservaRealizada();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+	ResourceBundle idioma;
+	
 	public PopUpReservaRealizada() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PopUpReservaRealizada.class.getResource("/Imagenes/plane.png")));
 		frame.getContentPane().setBackground(new Color(135, 206, 250));
 		frame.getContentPane().setForeground(new Color(135, 206, 250));
 		frame.setBounds(100, 100, 450, 150);
@@ -60,18 +39,18 @@ public class PopUpReservaRealizada {
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblNewLabel = new JLabel("Su reserva ha sido realizada con éxito");
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Rockwell", Font.BOLD, 17));
-		lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.gridx = 1;
-		gbc_lblNewLabel.gridy = 1;
-		frame.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
+		JLabel lblSuReserva = new JLabel(idioma.getString("lblSuReserva"));
+		lblSuReserva.setForeground(new Color(255, 255, 255));
+		lblSuReserva.setFont(new Font("Rockwell", Font.BOLD, 17));
+		lblSuReserva.setAlignmentX(Component.CENTER_ALIGNMENT);
+		lblSuReserva.setHorizontalAlignment(SwingConstants.CENTER);
+		GridBagConstraints gbc_lblSuReserva = new GridBagConstraints();
+		gbc_lblSuReserva.insets = new Insets(0, 0, 5, 5);
+		gbc_lblSuReserva.gridx = 1;
+		gbc_lblSuReserva.gridy = 1;
+		frame.getContentPane().add(lblSuReserva, gbc_lblSuReserva);
 		
-		JButton btnAceptar = new JButton("Aceptar");
+		JButton btnAceptar = new JButton(idioma.getString("btnAceptar"));
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

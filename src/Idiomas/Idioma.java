@@ -18,7 +18,7 @@ public class Idioma extends Properties{
         }
     }
 
-     public ResourceBundle getIdioma() {
+     public static ResourceBundle getIdioma() {
         
     	 return idiomas;
    }

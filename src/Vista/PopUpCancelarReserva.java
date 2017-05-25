@@ -1,7 +1,5 @@
 package Vista;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -14,41 +12,23 @@ import java.awt.Insets;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 
 public class PopUpCancelarReserva {
 
 	JFrame frame;
+	ResourceBundle idioma;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PopUpCancelarReserva window = new PopUpCancelarReserva();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
 	public PopUpCancelarReserva() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
+		frame.setType(Type.POPUP);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PopUpCancelarReserva.class.getResource("/Imagenes/plane.png")));
 		frame.getContentPane().setBackground(new Color(135, 206, 250));
 		frame.setBounds(100, 100, 450, 150);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,31 +39,31 @@ public class PopUpCancelarReserva {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblNewLabel = new JLabel("Su reserva ha sido cancelada");
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Rockwell", Font.BOLD, 21));
-		lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 0);
-		gbc_lblNewLabel.gridx = 0;
-		gbc_lblNewLabel.gridy = 1;
-		frame.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
+		JLabel lblRCancelada = new JLabel(idioma.getString("lblRCancelada"));
+		lblRCancelada.setForeground(new Color(255, 255, 255));
+		lblRCancelada.setFont(new Font("Rockwell", Font.BOLD, 21));
+		lblRCancelada.setAlignmentX(Component.CENTER_ALIGNMENT);
+		lblRCancelada.setHorizontalAlignment(SwingConstants.CENTER);
+		GridBagConstraints gbc_lblRCancelada = new GridBagConstraints();
+		gbc_lblRCancelada.insets = new Insets(0, 0, 5, 0);
+		gbc_lblRCancelada.gridx = 0;
+		gbc_lblRCancelada.gridy = 1;
+		frame.getContentPane().add(lblRCancelada, gbc_lblRCancelada);
 		
-		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.addActionListener(new ActionListener() {
+		JButton btnAceptar2 = new JButton(idioma.getString("btnAtras2"));
+		btnAceptar2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				frame.dispose();
 				
 			}
 		});
-		btnAceptar.setAlignmentX(Component.CENTER_ALIGNMENT);
-		GridBagConstraints gbc_btnAceptar = new GridBagConstraints();
-		gbc_btnAceptar.insets = new Insets(0, 0, 5, 0);
-		gbc_btnAceptar.gridx = 0;
-		gbc_btnAceptar.gridy = 3;
-		frame.getContentPane().add(btnAceptar, gbc_btnAceptar);
+		btnAceptar2.setAlignmentX(Component.CENTER_ALIGNMENT);
+		GridBagConstraints gbc_btnAceptar2 = new GridBagConstraints();
+		gbc_btnAceptar2.insets = new Insets(0, 0, 5, 0);
+		gbc_btnAceptar2.gridx = 0;
+		gbc_btnAceptar2.gridy = 3;
+		frame.getContentPane().add(btnAceptar2, gbc_btnAceptar2);
 	}
 
 }

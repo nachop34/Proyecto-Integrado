@@ -1,7 +1,6 @@
 package Vista;
 
 import java.awt.Component;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -9,6 +8,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,41 +24,23 @@ import java.awt.Color;
 import javax.swing.JTable;
 import java.awt.Toolkit;
 
+import Idiomas.Idioma;
+
 public class Mostrarvuelos {
 
 	JFrame frame2;
 	private JTable table;
+	ResourceBundle idioma;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Mostrarvuelos window = new Mostrarvuelos();
-					window.frame2.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
 	public Mostrarvuelos() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
+		idioma = Idioma.getIdioma();
 		ConsultasVuelo cv = new ConsultasVuelo();
 		frame2 = new JFrame();
-		frame2.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
+		frame2.setIconImage(Toolkit.getDefaultToolkit().getImage(Mostrarvuelos.class.getResource("/Imagenes/plane.png")));
 		frame2.getContentPane().setBackground(new Color(135, 206, 250));
 		frame2.setBounds(100, 100, 450, 300);
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,18 +51,18 @@ public class Mostrarvuelos {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		frame2.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblNewLabel = new JLabel("Vuelos Disponibles");
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setVerticalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
-		lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-		lblNewLabel.setFont(new Font("Rockwell", Font.BOLD, 23));
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.gridx = 1;
-		gbc_lblNewLabel.gridy = 1;
-		frame2.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
+		JLabel lblVDisponibles = new JLabel(idioma.getString("lblVDisponibles"));
+		lblVDisponibles.setForeground(new Color(255, 255, 255));
+		lblVDisponibles.setVerticalAlignment(SwingConstants.CENTER);
+		lblVDisponibles.setHorizontalAlignment(SwingConstants.CENTER);
+		lblVDisponibles.setAlignmentY(Component.CENTER_ALIGNMENT);
+		lblVDisponibles.setAlignmentX(Component.CENTER_ALIGNMENT);
+		lblVDisponibles.setFont(new Font("Rockwell", Font.BOLD, 23));
+		GridBagConstraints gbc_lblVDisponibles = new GridBagConstraints();
+		gbc_lblVDisponibles.insets = new Insets(0, 0, 5, 5);
+		gbc_lblVDisponibles.gridx = 1;
+		gbc_lblVDisponibles.gridy = 1;
+		frame2.getContentPane().add(lblVDisponibles, gbc_lblVDisponibles);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
@@ -105,7 +87,7 @@ public class Mostrarvuelos {
 		table.setModel(model);
 		
 		
-		JButton btnAtrs = new JButton("Atr\u00E1s");
+		JButton btnAtrs = new JButton(idioma.getString("btnAtrs"));
 		btnAtrs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame2.dispose();
