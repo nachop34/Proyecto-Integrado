@@ -1,5 +1,6 @@
 package Controlador;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -37,6 +38,41 @@ public class ConsultasReserva {
 				e.printStackTrace();
 			}		
 	    return tabla;
+	}
+	
+	public static void eliminarReservas(int id){
+		ResultSet rs = null;
+		BD bd = new BD();
+		Statement stmt;
+		
+    	
+    	try {
+			String sql = "DELETE FROM reserva WHERE IdReserva = "+id;
+			PreparedStatement preparedStatement =  bd.getConexion().prepareStatement(sql);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+	}
+	
+	public static void insertarReservas(int idRESERVA, String pasajero, int plaza, int idVUELO){
+		ResultSet rs = null;
+		BD bd = new BD();
+		Statement stmt;
+		
+    	
+    	try {
+			String sql = "INSERT INTO reserva (idRESERVA, pasajero, plaza, idVUELO)" +
+			        "VALUES (?, ?, ?, ?)";
+			PreparedStatement preparedStatement =  bd.getConexion().prepareStatement(sql);
+			preparedStatement.setInt(1, idRESERVA);
+			preparedStatement.setString(2, pasajero);
+			preparedStatement.setInt(3, plaza);
+			preparedStatement.setInt(4, idVUELO);
+			preparedStatement.executeUpdate(); 
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
 	}
 	
 	
