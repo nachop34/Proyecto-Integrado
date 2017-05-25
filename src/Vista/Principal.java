@@ -5,9 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
-
-import Idiomas.Idioma;
-
 import java.awt.GridBagConstraints;
 import javax.swing.JButton;
 import java.awt.Insets;
@@ -15,12 +12,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
-import javax.swing.JComboBox;
 
 public class Principal {
 
 	JFrame frame;
-	public JComboBox comboBox;
 
 	/**
 	 * Launch the application.
@@ -54,36 +49,11 @@ public class Principal {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] {63, 30, 30, 30, 30, 30, 30};
+		gridBagLayout.columnWidths = new int[] {30, 30, 30, 30, 30, 30, 30};
 		gridBagLayout.rowHeights = new int[] {30, 0, 30, 0, 30, 0, 30, 30, 30};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0};
 		frame.getContentPane().setLayout(gridBagLayout);
-		
-		JLabel lblIdioma = new JLabel("Idioma");
-		lblIdioma.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblIdioma.setForeground(new Color(255, 255, 255));
-		GridBagConstraints gbc_lblIdioma = new GridBagConstraints();
-		gbc_lblIdioma.insets = new Insets(0, 0, 5, 5);
-		gbc_lblIdioma.gridx = 0;
-		gbc_lblIdioma.gridy = 0;
-		frame.getContentPane().add(lblIdioma, gbc_lblIdioma);
-		
-		comboBox = new JComboBox();
-		comboBox.setSelectedItem(Idioma.getIdioma().idim);
-		comboBox.addActionListener(new ActionListener(){
-			public void actionPerformed (ActionEvent e) {
-				try {
-					Idioma.getIdioma().setIdioma((String) comboBox.getSelectedItem());
-					btnHacerR.setText(Idioma)
-				}
-			}
-		}
-		gbc_comboBoxIdioma.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBoxIdioma.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBoxIdioma.gridx = 0;
-		gbc_comboBoxIdioma.gridy = 1;
-		frame.getContentPane().add(comboBox, gbc_comboBoxIdioma);
 		
 		JLabel lblMenu = new JLabel("MENU PRINCIPAL");
 		lblMenu.setForeground(Color.WHITE);
@@ -139,6 +109,4 @@ public class Principal {
 		frame.getContentPane().add(btnMostrarR, gbc_btnMostrarR);
 	}
 
-	comboBox.setModel(new DefaultComboBoxModel(new String[] {"Español", "English"}));
-	
 }
