@@ -8,6 +8,7 @@ public class VueloModelo {
 	private String HLlegada;
 	private int Plazas;
 	private String Aerolinea;
+	
 	public VueloModelo() {
 		this.idVUELO = 0;
 		this.COrigen = "";
@@ -17,6 +18,17 @@ public class VueloModelo {
 		this.Plazas = 52;
 		this.Aerolinea = "";
 	}
+	public VueloModelo(int idv,String cO,String cD,String hS, String hL,String a,int p) {
+		this.idVUELO = idv;
+		this.COrigen = cO;
+		this.CDestino = cD;
+		this.HSalida = hS;
+		this.HLlegada = hL;
+		this.Plazas = p;
+		this.Aerolinea = a;
+	
+	}
+	
 	public int getIdVUELO() {
 		return idVUELO;
 	}
@@ -59,4 +71,10 @@ public class VueloModelo {
 	public void setAerolinea(String aerolinea) {
 		Aerolinea = aerolinea;
 	}
+	
+	public String toString(){
+		String aTornar="id: "+this.idVUELO+" cOrigen:"+this.COrigen+ " cDestino:"+this.CDestino;
+		return aTornar;
+	}
+	
 }
