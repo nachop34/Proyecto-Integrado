@@ -10,11 +10,11 @@ public class Idioma extends Properties{
 	
     public Idioma(String idioma){
         if(idioma.equals("Español")){//Español
-            idiomas = ResourceBundle.getBundle("_ES");
+            idiomas = ResourceBundle.getBundle("Idiomas/_ES");
         }else if(idioma.equals("English")){//Ingles
-            idiomas = ResourceBundle.getBundle("_EN");
+            idiomas = ResourceBundle.getBundle("Idiomas/_EN");
         }else{
-            idiomas = ResourceBundle.getBundle("_ES");
+            idiomas = ResourceBundle.getBundle("Idiomas/_ES");
         }
     }
 
