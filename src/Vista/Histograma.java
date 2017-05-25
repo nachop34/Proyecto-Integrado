@@ -12,10 +12,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.Box;
 import java.awt.Toolkit;
+import java.awt.Window;
+
 import javax.swing.JPanel;
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
@@ -23,7 +26,7 @@ import java.awt.event.ActionEvent;
 
 public class Histograma {
 
-	private JFrame frmSeleccionDePlaza;
+	JFrame frmSeleccionDePlaza;
 
 	
 	public static void main(String[] args) {
@@ -49,6 +52,7 @@ public class Histograma {
 	
 	private void initialize() {
 		frmSeleccionDePlaza = new JFrame();
+		frmSeleccionDePlaza.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
 		frmSeleccionDePlaza.getContentPane().setBackground(new Color(135, 206, 250));
 		frmSeleccionDePlaza.setBackground(Color.YELLOW);
 		frmSeleccionDePlaza.setForeground(Color.YELLOW);
@@ -482,13 +486,32 @@ public class Histograma {
 		frmSeleccionDePlaza.getContentPane().add(button_50, gbc_button_50);
 		
 		JButton btnAtrs = new JButton("Atr\u00E1s");
+		btnAtrs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				frmSeleccionDePlaza.dispose();
+				HacerReserva window = new HacerReserva();
+				window.setVisible(true);
+				
+			}
+		});
 		GridBagConstraints gbc_btnAtrs = new GridBagConstraints();
 		gbc_btnAtrs.insets = new Insets(0, 0, 0, 5);
 		gbc_btnAtrs.gridx = 0;
 		gbc_btnAtrs.gridy = 9;
 		frmSeleccionDePlaza.getContentPane().add(btnAtrs, gbc_btnAtrs);
 		
-		JButton button_51 = new JButton("Aceptar");
+		JButton button_51 = new JButton("Siguiente");
+		button_51.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				frmSeleccionDePlaza.dispose();
+				IntroduNombre window = new IntroduNombre();
+				window.frame8.setVisible(true);
+			
+				
+			}
+		});
 		GridBagConstraints gbc_button_51 = new GridBagConstraints();
 		gbc_button_51.insets = new Insets(0, 0, 0, 5);
 		gbc_button_51.gridx = 9;

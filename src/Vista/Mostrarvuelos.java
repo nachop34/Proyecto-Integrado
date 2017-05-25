@@ -22,6 +22,7 @@ import Modelo.VueloModelo;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JTable;
+import java.awt.Toolkit;
 
 public class Mostrarvuelos {
 
@@ -57,6 +58,7 @@ public class Mostrarvuelos {
 	private void initialize() {
 		ConsultasVuelo cv = new ConsultasVuelo();
 		frame2 = new JFrame();
+		frame2.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
 		frame2.getContentPane().setBackground(new Color(135, 206, 250));
 		frame2.setBounds(100, 100, 450, 300);
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,6 +91,7 @@ public class Mostrarvuelos {
 		frame2.getContentPane().add(scrollPane, gbc_scrollPane);
 		
 		table = new JTable();
+		table.setEnabled(false);
 		scrollPane.setViewportView(table);
 		ArrayList<VueloModelo> tabla = cv.mostrarVuelos();
 		

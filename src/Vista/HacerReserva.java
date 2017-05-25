@@ -32,9 +32,13 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.Toolkit;
 
 public class HacerReserva extends JFrame {
 
+	
+	
+	
 	private JPanel contentPane;
 	JComboBox destino;
 	private JTable table;
@@ -59,6 +63,7 @@ public class HacerReserva extends JFrame {
 	 * Create the frame.
 	 */
 	public HacerReserva() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 300);
 		contentPane = new JPanel();
@@ -144,6 +149,13 @@ public class HacerReserva extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JButton btnHacerReserva = new JButton("Hacer Reserva");
+		btnHacerReserva.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Histograma window = new Histograma();
+				window.frmSeleccionDePlaza.setVisible(true);
+			}
+		});
 		GridBagConstraints gbc_btnHacerReserva = new GridBagConstraints();
 		gbc_btnHacerReserva.insets = new Insets(0, 0, 5, 5);
 		gbc_btnHacerReserva.gridx = 2;
