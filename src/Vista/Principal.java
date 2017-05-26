@@ -30,12 +30,13 @@ public class Principal extends JFrame implements ItemListener {
 	private JPanel contentPane;
 	static Idioma idioma;
 	static Principal frame;
+	static Mostrarvuelos window;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					idioma = new Idioma("Español");
+					idioma = new Idioma("Espaï¿½ol");
 					frame = new Principal();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -85,7 +86,7 @@ public class Principal extends JFrame implements ItemListener {
 		gbc_comboBox.gridx = 1;
 		gbc_comboBox.gridy = 1;
 		contentPane.add(comboBox, gbc_comboBox);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Language", "Español", "English"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Language", "Espaï¿½ol", "English"}));
 		comboBox.addItemListener(this);
 		
 		Panel panel_6 = new Panel();
@@ -122,8 +123,10 @@ public class Principal extends JFrame implements ItemListener {
 		btnMostrarV.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				Mostrarvuelos window = new Mostrarvuelos();
+				System.out.println("Entro en el action performed");
+				//frame.dispose();
+				window = new Mostrarvuelos();
+				System.out.println("DespuÃ©s de muestr vuelo");
 				window.frame2.setVisible(true);
 			}
 		});

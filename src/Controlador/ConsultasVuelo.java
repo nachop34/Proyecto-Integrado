@@ -18,10 +18,12 @@ public class ConsultasVuelo {
 	public ArrayList<VueloModelo> mostrarVuelos(){
 	    ResultSet rs = null;
 		BD cn = new BD();
+		
     	Statement stmt;
     	ArrayList<VueloModelo> tabla = new ArrayList<VueloModelo>();
     	
 		try {
+			
 			stmt = cn.getConexion().createStatement();
 			rs = stmt.executeQuery("SELECT A.Nombre, IdVuelo, COrigen, CDestino, HSalida, HLlegada, Plazas "
 					+ "FROM aerolinea A JOIN vuelo V ON A.IdAerolinea = V.IdAerolinea");

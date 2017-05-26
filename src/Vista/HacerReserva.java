@@ -37,6 +37,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 
 import Idiomas.Idioma;
+import javax.swing.JCheckBox;
 
 public class HacerReserva extends JFrame {
 
@@ -128,7 +129,7 @@ public class HacerReserva extends JFrame {
 					ArrayList<VueloModelo> llistatVolsOrigen = lt.ltabla(origenSeleccionat, destinoSeleccionat);
 					System.out.println(origenSeleccionat + destinoSeleccionat);
 					//llenar la tabla
-					String[] nombres = {"IDvuelo","Origen","Destino","H.Salida", "H.Llegada","Aerolinea"};
+					String[] nombres = {"IDvuelo","Origen","Destino","H.Salida", "H.Llegada","Plazas"};
 					DefaultTableModel table_modelo=new DefaultTableModel(nombres,0);
 					
 					table.setModel(table_modelo);
@@ -194,6 +195,11 @@ public class HacerReserva extends JFrame {
 		//table.setModel(table_modelo);
 		
 		JButton btnSiguiente = new JButton(idioma.getString("btnSiguiente"));
+		btnSiguiente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		GridBagConstraints gbc_btnSiguiente = new GridBagConstraints();
 		gbc_btnSiguiente.insets = new Insets(0, 0, 5, 5);
 		gbc_btnSiguiente.gridx = 2;
