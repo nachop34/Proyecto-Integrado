@@ -29,6 +29,7 @@ import javax.swing.JPanel;
 
 public class ReservasRealizadas {
 
+	int idReserva;
 	JFrame frame4;
 	private JTable table;
 	ResourceBundle idioma;
@@ -79,6 +80,7 @@ public class ReservasRealizadas {
 		JButton btnCancelar = new JButton(idioma.getString("btnCancelar"));
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				ConsultasReserva.eliminarReservas(idReserva);
 				PopUpCancelarReserva window = new PopUpCancelarReserva();
 				window.frame.setVisible(true);
 			}
@@ -122,6 +124,7 @@ public class ReservasRealizadas {
 				{
 					int id = (int)table.getValueAt(table.getSelectedRow(), 0);
 					System.out.println(id);
+					idReserva = id;
 				}
 			}
 		});

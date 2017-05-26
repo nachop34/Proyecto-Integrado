@@ -54,7 +54,7 @@ public class PopUpCancelarReserva {
 		gbc_lblRCancelada.gridy = 1;
 		frame.getContentPane().add(lblRCancelada, gbc_lblRCancelada);
 		
-		JButton btnAceptar2 = new JButton(idioma.getString("btnAtras2"));
+		JButton btnAceptar2 = new JButton(idioma.getString("btnAceptar2"));
 		btnAceptar2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
