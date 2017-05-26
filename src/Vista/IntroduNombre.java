@@ -1,7 +1,5 @@
 package Vista;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.GridBagLayout;
 import javax.swing.JTextField;
@@ -16,42 +14,25 @@ import java.awt.event.ActionEvent;
 import java.awt.Component;
 import javax.swing.Box;
 import java.awt.Toolkit;
+import java.awt.Window.Type;
 
 public class IntroduNombre {
 
 	JFrame frame8;
 	private JTextField textField;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					IntroduNombre window = new IntroduNombre();
-					window.frame8.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+	
 	public IntroduNombre() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame8 = new JFrame();
-		frame8.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Pablo\\Downloads\\SKYTEMAADVISORLOGO.PNG"));
+		frame8.setResizable(false);
+		frame8.setType(Type.POPUP);
+		frame8.setIconImage(Toolkit.getDefaultToolkit().getImage(IntroduNombre.class.getResource("/Imagenes/plane.png")));
 		frame8.getContentPane().setBackground(new Color(135, 206, 250));
+		frame8.setBounds(100, 100, 450, 150);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 308, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 54, 0, 71, 0, 0};
@@ -66,7 +47,6 @@ public class IntroduNombre {
 				frame8.dispose();
 				Histograma window = new Histograma();
 				window.frmSeleccionDePlaza.setVisible(true);
-				
 			}
 		});
 		

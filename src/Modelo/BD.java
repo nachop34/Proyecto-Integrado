@@ -14,7 +14,7 @@ public class BD {
 			System.err.println(e);
 		}
 		try{
-			
+
 			String cadenaDeConnexio = "jdbc:mysql://35.162.56.100/alianzaaerolines?user=usuario&password=skyteamadvisor2017";
 			conexion= DriverManager.getConnection(cadenaDeConnexio);
 			

@@ -24,6 +24,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.Panel;
 import java.awt.Toolkit;
+import javax.swing.JCheckBox;
 
 public class Principal extends JFrame implements ItemListener {
 
@@ -153,12 +154,28 @@ public class Principal extends JFrame implements ItemListener {
 			}
 		});
 		
+		JCheckBox chckbxAdministrador = new JCheckBox(idioma.getIdioma().getString("chckbxAdministrador"));
+		chckbxAdministrador.setForeground(new Color(255, 255, 255));
+		chckbxAdministrador.setBackground(new Color(135, 206, 250));
+		GridBagConstraints gbc_chckbxAdministrador = new GridBagConstraints();
+		gbc_chckbxAdministrador.insets = new Insets(0, 0, 5, 5);
+		gbc_chckbxAdministrador.gridx = 1;
+		gbc_chckbxAdministrador.gridy = 6;
+		contentPane.add(chckbxAdministrador, gbc_chckbxAdministrador);
+		
 		Panel panel_2 = new Panel();
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
 		gbc_panel_2.insets = new Insets(0, 0, 5, 5);
 		gbc_panel_2.gridx = 4;
 		gbc_panel_2.gridy = 6;
 		contentPane.add(panel_2, gbc_panel_2);
+		
+		JButton btnIniciar = new JButton(idioma.getIdioma().getString("btnIniciar"));
+		GridBagConstraints gbc_btnIniciar = new GridBagConstraints();
+		gbc_btnIniciar.insets = new Insets(0, 0, 5, 5);
+		gbc_btnIniciar.gridx = 1;
+		gbc_btnIniciar.gridy = 7;
+		contentPane.add(btnIniciar, gbc_btnIniciar);
 		
 		JButton btnMostrarR = new JButton(idioma.getIdioma().getString("btnMostrarR"));
 		GridBagConstraints gbc_btnMostrarR = new GridBagConstraints();
