@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Component;
 import javax.swing.SwingConstants;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 import Controlador.ConsultasReserva;
@@ -113,6 +115,16 @@ public class ReservasRealizadas {
 						tabla.get(i).getPlaza(), tabla.get(i).getIdVuelo()});
 			}
 		table.setModel(model);
+		
+		table.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
+			public void valueChanged(ListSelectionEvent event) {
+				if (event.getValueIsAdjusting())
+				{
+					int id = (int)table.getValueAt(table.getSelectedRow(), 0);
+					System.out.println(id);
+				}
+			}
+		});
 		
 		btnCancelar.setHorizontalAlignment(SwingConstants.LEFT);
 		GridBagConstraints gbc_btnCancelar = new GridBagConstraints();

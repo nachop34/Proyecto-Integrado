@@ -47,9 +47,6 @@ public class Principal extends JFrame implements ItemListener {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Principal() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/Imagenes/plane.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,7 +84,7 @@ public class Principal extends JFrame implements ItemListener {
 		gbc_comboBox.gridx = 1;
 		gbc_comboBox.gridy = 1;
 		contentPane.add(comboBox, gbc_comboBox);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Language", "Espaï¿½ol", "English"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Language", "Español", "English"}));
 		comboBox.addItemListener(this);
 		
 		Panel panel_6 = new Panel();
@@ -124,10 +121,9 @@ public class Principal extends JFrame implements ItemListener {
 		btnMostrarV.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Entro en el action performed");
-				//frame.dispose();
+				System.out.println("OK");
+				frame.dispose();
 				window = new Mostrarvuelos();
-				System.out.println("DespuÃ©s de muestr vuelo");
 				window.frame2.setVisible(true);
 			}
 		});

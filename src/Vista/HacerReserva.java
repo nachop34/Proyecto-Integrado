@@ -141,7 +141,7 @@ public class HacerReserva extends JFrame {
 					ArrayList<VueloModelo> llistatVolsOrigen = lt.ltabla(origenSeleccionat, destinoSeleccionat);
 					System.out.println(origenSeleccionat + destinoSeleccionat);
 					//llenar la tabla
-					String[] nombres = {"IDvuelo","Origen","Destino","H.Salida", "H.Llegada","Plazas"};
+					String[] nombres = {"IDvuelo","Origen","Destino","H.Salida", "H.Llegada","Plazas"  };
 					DefaultTableModel table_modelo=new DefaultTableModel(nombres,0);
 					
 					table.setModel(table_modelo);

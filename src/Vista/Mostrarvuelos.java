@@ -89,10 +89,8 @@ public class Mostrarvuelos {
 		table = new JTable();
 		table.setEnabled(false);
 		scrollPane.setViewportView(table);
-		System.out.println("hola1");
+		System.out.println("OK");
 		ArrayList<VueloModelo> tabla = cv.mostrarVuelos();
-		
-		System.out.println("hola2");
 		
 		DefaultTableModel model = new DefaultTableModel(new Object[]{"Aerolinea", "ID Vuelo", "Origen", "Destino", 
 				"Hora Salida", "Hora Llegada"},0);
@@ -102,8 +100,6 @@ public class Mostrarvuelos {
 						tabla.get(i).getCDestino(), tabla.get(i).getHSalida(), tabla.get(i).getHLlegada()});
 			}
 		table.setModel(model);
-		
-		System.out.println("hola3");
 		
 		JButton btnAtrs = new JButton(idioma.getString("btnAtrs"));
 		btnAtrs.addActionListener(new ActionListener() {
