@@ -10,6 +10,9 @@ import java.awt.GridBagConstraints;
 import javax.swing.JButton;
 import java.awt.Insets;
 import javax.swing.SwingConstants;
+
+import Idiomas.Idioma;
+
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
@@ -26,6 +29,7 @@ public class PopUpReservaRealizada {
 	}
 
 	private void initialize() {
+		idioma = Idioma.getIdioma();
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PopUpReservaRealizada.class.getResource("/Imagenes/plane.png")));
 		frame.getContentPane().setBackground(new Color(135, 206, 250));

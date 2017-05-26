@@ -3,6 +3,9 @@ package Vista;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import Idiomas.Idioma;
+
 import java.awt.Component;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -26,6 +29,7 @@ public class PopUpCancelarReserva {
 	}
 
 	private void initialize() {
+		idioma = Idioma.getIdioma();
 		frame = new JFrame();
 		frame.setType(Type.POPUP);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PopUpCancelarReserva.class.getResource("/Imagenes/plane.png")));

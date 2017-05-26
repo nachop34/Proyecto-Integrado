@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 
+import Idiomas.Idioma;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
@@ -25,6 +27,7 @@ public class PopUpSinplazas {
 	}
 
 	private void initialize() {
+		idioma = Idioma.getIdioma();
 		frame = new JFrame();
 		frame.setType(Type.POPUP);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PopUpSinplazas.class.getResource("/Imagenes/plane.png")));
