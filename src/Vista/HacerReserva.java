@@ -1,7 +1,5 @@
 package Vista;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -15,28 +13,25 @@ import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JComboBox;
-//marquita
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.DefaultListModel;
 
 import javax.swing.JButton;
 import java.awt.Font;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.EventQueue;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 
 import Idiomas.Idioma;
+import java.awt.Toolkit;
 
 public class HacerReserva extends JFrame {
 
@@ -45,8 +40,23 @@ public class HacerReserva extends JFrame {
 	JComboBox origen ;
 	JTable table;
 	ResourceBundle idioma;
-
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					HacerReserva frame3 = new HacerReserva();
+					frame3.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
 	public HacerReserva() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(HacerReserva.class.getResource("/Imagenes/plane.png")));
+		setResizable(false);
 		
 		idioma = Idioma.getIdioma();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -105,7 +115,6 @@ public class HacerReserva extends JFrame {
 			}
 		});
 		
-		
 		GridBagConstraints gbc_origen = new GridBagConstraints();
 		gbc_origen.insets = new Insets(0, 0, 5, 5);
 		gbc_origen.fill = GridBagConstraints.HORIZONTAL;
@@ -155,15 +164,11 @@ public class HacerReserva extends JFrame {
 					
 					}else{
 						JOptionPane.showMessageDialog(null, "Selecciona Origen y Destino", "Error", JOptionPane.ERROR_MESSAGE);
-					}
-					
-					
-						
-					}
-				
-				
+					}		
+				}
 			}
 		});
+		
 		GridBagConstraints gbc_destino = new GridBagConstraints();
 		gbc_destino.insets = new Insets(0, 0, 5, 5);
 		gbc_destino.fill = GridBagConstraints.HORIZONTAL;
@@ -207,9 +212,8 @@ public class HacerReserva extends JFrame {
 				Principal window = new Principal();
 				window.frame.setVisible(true);
 			}
-
-		
 		});
+		
 		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
 		GridBagConstraints gbc_btnAtras = new GridBagConstraints();
 		gbc_btnAtras.anchor = GridBagConstraints.WEST;
@@ -218,5 +222,4 @@ public class HacerReserva extends JFrame {
 		gbc_btnAtras.gridy = 8;
 		contentPane.add(btnAtras, gbc_btnAtras);
 	}
-
 }

@@ -15,7 +15,7 @@ public class BD {
 		}
 		try{
 
-			String cadenaDeConnexio = "jdbc:mysql://54.213.237.88/alianzaaerolines?user=usuario&password=skyteamadvisor2017";
+			String cadenaDeConnexio = "jdbc:mysql://35.162.56.100/alianzaaerolines?user=usuario&password=skyteamadvisor2017";
 			conexion= DriverManager.getConnection(cadenaDeConnexio);
 		}catch(Exception e){
 			System.err.println("Error connectant a mysql/alianzaerolines "+e);
