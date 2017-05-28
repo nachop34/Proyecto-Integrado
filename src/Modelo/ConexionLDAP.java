@@ -16,11 +16,11 @@ public class ConexionLDAP {
 		Hashtable<String, String> env = new Hashtable<String, String>();
 		env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
 		env.put(Context.SECURITY_AUTHENTICATION, "simple");
-		env.put(Context.PROVIDER_URL, "ldap://10.2.72.170");
+		env.put(Context.PROVIDER_URL, "ldap://10.2.72.197");
 		
 		//Rellenamos con el usuario/dominio y password
-		env.put(Context.SECURITY_PRINCIPAL, "usuario@nombre_dominio.com");
-		env.put(Context.SECURITY_CREDENTIALS, "password");
+		env.put(Context.SECURITY_PRINCIPAL, "Sistemaswin12.com");
+		env.put(Context.SECURITY_CREDENTIALS, "Skyteamadvisor17");
 
 		DirContext ctx;
 
@@ -31,7 +31,7 @@ public class ConexionLDAP {
 			ctx.close();
 
 		} catch (NamingException ex) {
-			System.out.println("Ha habido un error en la autenticaciÃ³n");
+			System.out.println("Ha habido un error en la autenticación");
 		}
 			
 
