@@ -30,7 +30,7 @@ import javax.swing.JPanel;
 public class ReservasRealizadas {
 
 	int idReserva;
-	JFrame frame4;
+	public JFrame frame4;
 	private JTable table;
 	ResourceBundle idioma;
 

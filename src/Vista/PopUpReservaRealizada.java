@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 
 public class PopUpReservaRealizada {
 
-	private JFrame frame;
+	JFrame frame11;
 	ResourceBundle idioma;
 	
 	public PopUpReservaRealizada() {
@@ -30,18 +30,18 @@ public class PopUpReservaRealizada {
 
 	private void initialize() {
 		idioma = Idioma.getIdioma();
-		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PopUpReservaRealizada.class.getResource("/Imagenes/plane.png")));
-		frame.getContentPane().setBackground(new Color(135, 206, 250));
-		frame.getContentPane().setForeground(new Color(135, 206, 250));
-		frame.setBounds(100, 100, 450, 150);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame11 = new JFrame();
+		frame11.setIconImage(Toolkit.getDefaultToolkit().getImage(PopUpReservaRealizada.class.getResource("/Imagenes/plane.png")));
+		frame11.getContentPane().setBackground(new Color(135, 206, 250));
+		frame11.getContentPane().setForeground(new Color(135, 206, 250));
+		frame11.setBounds(100, 100, 450, 150);
+		frame11.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{64, 305, 37, 0};
 		gridBagLayout.rowHeights = new int[]{28, 21, 33, 0, 23, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
-		frame.getContentPane().setLayout(gridBagLayout);
+		frame11.getContentPane().setLayout(gridBagLayout);
 		
 		JLabel lblSuReserva = new JLabel(idioma.getString("lblSuReserva"));
 		lblSuReserva.setForeground(new Color(255, 255, 255));
@@ -52,13 +52,13 @@ public class PopUpReservaRealizada {
 		gbc_lblSuReserva.insets = new Insets(0, 0, 5, 5);
 		gbc_lblSuReserva.gridx = 1;
 		gbc_lblSuReserva.gridy = 1;
-		frame.getContentPane().add(lblSuReserva, gbc_lblSuReserva);
+		frame11.getContentPane().add(lblSuReserva, gbc_lblSuReserva);
 		
 		JButton btnAceptar = new JButton(idioma.getString("btnAceptar"));
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				frame.dispose();
+				frame11.dispose();
 				
 			}
 		});
@@ -67,7 +67,7 @@ public class PopUpReservaRealizada {
 		gbc_btnAceptar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnAceptar.gridx = 1;
 		gbc_btnAceptar.gridy = 3;
-		frame.getContentPane().add(btnAceptar, gbc_btnAceptar);
+		frame11.getContentPane().add(btnAceptar, gbc_btnAceptar);
 	}
 
 }

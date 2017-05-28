@@ -29,7 +29,7 @@ import javax.swing.JPanel;
 
 public class Mostrarvuelos {
 
-	JFrame frame2;
+	public JFrame frame2;
 	private JTable table;
 	ResourceBundle idioma;
 

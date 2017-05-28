@@ -55,7 +55,7 @@ public class ConsultasReserva {
 		}		
 	}
 	
-	public static void insertarReservas(int idRESERVA, String pasajero, int plaza, int idVUELO){
+	public static void insertarReservas(Object idRESERVA, String pasajero, int plaza, int idVUELO){
 		ResultSet rs = null;
 		BD bd = new BD();
 		Statement stmt;
@@ -65,7 +65,7 @@ public class ConsultasReserva {
 			String sql = "INSERT INTO reserva (idRESERVA, pasajero, plaza, idVUELO)" +
 			        "VALUES (?, ?, ?, ?)";
 			PreparedStatement preparedStatement =  bd.getConexion().prepareStatement(sql);
-			preparedStatement.setInt(1, idRESERVA);
+			preparedStatement.setObject(1, idRESERVA);
 			preparedStatement.setString(2, pasajero);
 			preparedStatement.setInt(3, plaza);
 			preparedStatement.setInt(4, idVUELO);

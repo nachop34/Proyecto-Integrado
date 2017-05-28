@@ -11,6 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Idiomas.Idioma;
+import Vista.HacerReserva;
+import Vista.Mostrarvuelos;
+import Vista.ReservasRealizadas;
 
 import java.awt.GridBagLayout;
 import java.awt.Color;
